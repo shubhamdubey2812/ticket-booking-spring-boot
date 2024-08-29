@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/ticket-booking-spring-boot.iml" filepath="$PROJECT_DIR$/.idea/ticket-booking-spring-boot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ticket-booking-spring-boot/ticket-booking-spring-boot.iml" filepath="$PROJECT_DIR$/ticket-booking-spring-boot/ticket-booking-spring-boot.iml" />
     </modules>
   </component>
 </project>

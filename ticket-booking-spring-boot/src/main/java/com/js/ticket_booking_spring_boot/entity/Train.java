@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalTime;
+
 @Entity
 @Data
 @AllArgsConstructor
@@ -19,7 +20,6 @@ public class Train {
     private String destination;
     private LocalTime departureTime;
     private LocalTime arrivalTime;
-    private int duration;
+    private String duration;
     private String runsOnDays;
-
 }

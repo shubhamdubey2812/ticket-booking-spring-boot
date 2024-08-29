@@ -4,10 +4,14 @@ import com.js.ticket_booking_spring_boot.entity.Train;
 import com.js.ticket_booking_spring_boot.repository.TrainRepository;
 import com.js.ticket_booking_spring_boot.response.ResponseStructure;
 import com.js.ticket_booking_spring_boot.service.TrainService;
+import com.js.ticket_booking_spring_boot.utils.CalculationTrainDuration;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 
 @Service
 public class TrainServiceImpl implements TrainService {
@@ -20,6 +24,9 @@ public class TrainServiceImpl implements TrainService {
     @Override
     public ResponseStructure<Train> saveTrain(Train train) {
         if(httpSession.getAttribute("adminSession")!=null){
+
+            train.setDuration(CalculationTrainDuration.calculateDuration(train.getDepartureTime(),train.getArrivalTime()));
+
             Train train1=trainRepository.save(train);
             if(train1!=null){
                 responseStructure.setStatusCode(HttpStatus.CREATED.value());

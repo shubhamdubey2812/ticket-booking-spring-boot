@@ -18,15 +18,13 @@ import java.time.LocalDate;
 @Setter
 public class BookingTicket {
     @Id
-    private long pnr;
+    private String pnr;
     private String passengerName;
     private int passengerAge;
     private String gender;
     private LocalDate journeyDate;
-
     @ManyToOne
     private Customer customer;
-
     @OneToOne
     private Train train;
 }
